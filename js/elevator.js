@@ -6,6 +6,7 @@ let btn = document.querySelectorAll('.btn')
 let Elevator = document.querySelector('.Elevator')
 let start = document.querySelector('.start')
 let n_step=document.querySelector(".n_step")
+let reset=document.querySelector('.reset')
 let is_move;
 let t = 2;
 
