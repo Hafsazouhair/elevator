@@ -100,6 +100,10 @@ function mo() {
   }, 5000);
 }
 
-
+reset.onclick=function(){
+  f.length=0
+  start.disabled=false
+ n_step.textContent=''
+}
 //ouvrirPortes(); // Pour ouvrir les portes
 //fermerPortes()// Pour fermer les portes après 3 secondes (3000 millisecondes)
