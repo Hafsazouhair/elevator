@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevator Doors Animation</title>
+<style>
+    .Elevator {
+        width: 200px;
+        height: 300px;
+        background-color: #ccc;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .door {
+        width: 100px;
+        height: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 0;
+        transition: transform 0.5s ease;
+    }
+
+    .left-door {
+        left: 0;
+        transform: translateX(-100%);
+    }
+
+    .right-door {
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    /* Animation keyframes */
+    @keyframes openDoor {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes closeDoor {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    /* Apply animation to doors */
+    .open .left-door {
+        animation: openDoor 0.5s forwards;
+    }
+
+    .open .right-door {
+        animation: openDoor 0.5s forwards;
+    }
+
+    .close .left-door {
+        animation: closeDoor 0.5s forwards;
+    }
+
+    .close .right-door {
+        animation: closeDoor 0.5s forwards;
+    }
+</style>
+</head>
+<body>
+<div class="Elevator open" id="elevator">
+    <div id="door1" class="door left-door"></div>
+    <div id="door2" class="door right-door"></div>
+</div>
+
+<script>
+    setTimeout(function() {
+        document.getElementById('elevator').classList.remove('open');
+    }, 2000); // Close the doors after 2 seconds
+</script>
+</body>
+</html>
